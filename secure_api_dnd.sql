@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2026 a las 15:28:44
+-- Tiempo de generación: 28-01-2026 a las 20:49:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,9 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `secure_api`
+-- Base de datos: `secure_api_dnd`
 --
-
+CREATE DATABASE IF NOT EXISTS secure_api_dnd;
+USE secure_api_dnd;
 -- --------------------------------------------------------
 
 --
@@ -117,7 +118,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2026_01_23_161935_create_personal_access_tokens_table', 1),
-(5, '2026_01_23_163143_create_posts_table', 2);
+(5, '2026_01_23_163143_create_posts_table', 2),
+(6, '2026_01_28_185215_create_personajes_table', 3);
 
 -- --------------------------------------------------------
 
@@ -130,6 +132,31 @@ CREATE TABLE `password_reset_tokens` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `personajes`
+--
+
+CREATE TABLE `personajes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `clase` varchar(255) NOT NULL,
+  `raza` varchar(255) NOT NULL,
+  `aliniamiento` varchar(255) NOT NULL,
+  `historia` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `personajes`
+--
+
+INSERT INTO `personajes` (`id`, `nombre`, `nivel`, `clase`, `raza`, `aliniamiento`, `historia`, `created_at`, `updated_at`) VALUES
+(1, 'ASI-1000', 10, 'Artificiero Artillero', 'Warforger', 'TrueNeutral', 'Es una maquina creada hace milenios proveniente del plano Astral', '2026-01-28 18:26:51', '2026-01-28 18:26:51');
 
 -- --------------------------------------------------------
 
@@ -256,6 +283,12 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indices de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -306,7 +339,13 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `personajes`
+--
+ALTER TABLE `personajes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
