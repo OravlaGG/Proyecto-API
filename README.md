@@ -25,4 +25,4 @@ Para hacer una ultima comprobación de que se puede sacar el $$\color{Gold}{Pers
 
 La solicitud fue un exitosa y nos devuelve los personajes existentes, por ahora solo hay uno que es mi personaje en una campaña que tengo.
 
-Ya sabemos que se pueden crear y sacar datos de la base de datos. Ahora lo que queda es crear el CRUD para que se pueda hacer por más personas y sea más visual.
+Ya sabemos que se pueden crear y sacar datos de la base de datos. Ahora lo que queda es crear el $$\color{RED}{CRUD}$$ para que se pueda hacer por más personas y sea más visual.
