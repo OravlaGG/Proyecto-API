@@ -1,59 +1,28 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center"> 
+  
+# $\color{Gold}{PROYECTO\ -\ API\ Alvaro\ Gomez}$
+</div>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+En este repositorio encontraremos mi primera aplicación creada con Laravel y usando APIs, es la primera parte de dos sobre un $$\color{RED}{CRUD}$$ creado con Laravel con tematica de personajes de $$\color{RED}{Dragones\ y\ Mazmorras(DnD)}$$.
 
-## About Laravel
+En su mayoria el proyecto como te lo genera de manera base Laravel con la excepción de la creación de el modelo, autentificador y request de $$\color{Gold}{Personaje}$$. Estos no tienen ningun cambio mayor a excepción de que el controlador mandara un mensaje de exito al añadir un personaje y que en request la autorización sea true, esto es temporal y para comprobar que se puede introducir nuevos personajes. Posiblemente se cambie en la segunda parte para que haya algun tipo de seguridad.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Tambien se creo la migración para el personaje para que asi exista la tabla que hace falta para que toda la aplicación funcione y tiene esta estructura:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/Migracion_personaje.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+La estructura no tiene ningun misterio ya que son datos basicos y ,si sabes algo de juegos de rol, entenderas para que es cada cosa. Aun si no conoces o juegas alguno los nombres son bastante descriptivos
 
-## Learning Laravel
+Una vez generada la tabla y echar a andar el proyecto pruebo que puedo hacer un $$\color{Lightblue}{POST}$$ para crear un personaje:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/post_Json.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Al mandar la solicitud de $$\color{Lightblue}{POST}$$ a la aplicación esta nos devolvera un mensaje, si ha sido exitosa nos envia el que aparece abajo del todo de la imagen, sino nos altara un error.
 
-## Laravel Sponsors
+Para hacer una ultima comprobación de que se puede sacar el $$\color{Gold}{Personaje}$$ de la base de datos le hacemos una solicitud $$\color{Green}{GET}$$
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/Get_Json.png)
 
-### Premium Partners
+La solicitud fue un exitosa y nos devuelve los personajes existentes, por ahora solo hay uno que es mi personaje en una campaña que tengo.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Ya sabemos que se pueden crear y sacar datos de la base de datos. Ahora lo que queda es crear el CRUD para que se pueda hacer por más personas y sea más visual.
