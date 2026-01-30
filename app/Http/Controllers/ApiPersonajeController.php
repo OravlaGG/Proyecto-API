@@ -61,9 +61,15 @@ class ApiPersonajeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Personaje $personaje)
+    public function update(PersonajeRequest $request, Personaje $personaje)
     {
-        //
+        $personaje->update($request->all());
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Personaje actualizado con éxito',
+            'personaje' => $personaje
+        ]);
     }
 
     /**
@@ -71,6 +77,11 @@ class ApiPersonajeController extends Controller
      */
     public function destroy(Personaje $personaje)
     {
-        //
+        $personaje->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Personaje eliminado con éxito'
+        ]);
     }
 }
