@@ -26,3 +26,24 @@ Para hacer una ultima comprobación de que se puede sacar el $$\color{Gold}{Pers
 La solicitud fue un exitosa y nos devuelve los personajes existentes, por ahora solo hay uno que es mi personaje en una campaña que tengo.
 
 Ya sabemos que se pueden crear y sacar datos de la base de datos. Ahora lo que queda es crear el $$\color{RED}{CRUD}$$ para que se pueda hacer por más personas y sea más visual.
+
+
+Aparte de esto tmambien podemos mándar solicitudes para cambiar algun personaje existente 
+
+ANTES
+
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/edicion_1.png)
+
+DESPUES
+
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/edicion_2.png)
+
+Para rematar podemos borrar de manera definitiva un personaje usamos la operación DELETE.
+
+ANTES
+
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/delete_1.png)
+
+DESPUES
+
+![alt text](https://github.com/OravlaGG/Proyecto-API/blob/main/capturas/delete_2.png)
